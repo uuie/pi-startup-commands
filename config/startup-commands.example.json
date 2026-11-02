@@ -1,0 +1,5 @@
+{
+  "commands": [
+    "/max-context 300k"
+  ]
+}

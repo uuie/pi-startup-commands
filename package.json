@@ -1,0 +1,36 @@
+{
+  "name": "pi-startup-commands",
+  "version": "0.1.0",
+  "description": "Run configured Pi extension commands on interactive startup and reload.",
+  "type": "module",
+  "license": "MIT",
+  "author": "chris",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uuie/pi-startup-commands.git"
+  },
+  "homepage": "https://github.com/uuie/pi-startup-commands#readme",
+  "bugs": {
+    "url": "https://github.com/uuie/pi-startup-commands/issues"
+  },
+  "keywords": ["pi-package", "pi-extension", "startup"],
+  "files": ["src", "config/startup-commands.example.json"],
+  "pi": {
+    "extensions": ["./src/index.js"]
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "scripts": {
+    "build": "node --check src/index.js",
+    "test": "node --test tests/*.test.js",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}
